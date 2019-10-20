@@ -11,7 +11,7 @@ class LanguajeInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
         val url = request.url().newBuilder()
-            .addQueryParameter("lang", "es")
+            .addQueryParameter("lang", "es_cl")
             .build()
         request = request.newBuilder().url(url).build()
         return chain.proceed(request)

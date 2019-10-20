@@ -107,6 +107,12 @@ class ZomatoServiceTest {
 
         val lastRestaurant = restaurants.last()
         assertThat(lastRestaurant.id, `is`(8301532))
+        assertThat(lastRestaurant.name, `is`("Al Jazeera"))
+        assertThat(lastRestaurant.location.localityVerbose, `is`("Galería Edificio Huérfanos 1373, Santiago Centro, Santiago"))
+        assertThat(lastRestaurant.userRating.rating, `is`(3.8F))
+        assertThat(lastRestaurant.userRating.color, `is`("9ACD32"))
+        assertThat(lastRestaurant.cuisines, `is`("Arabian"))
+        assertThat(lastRestaurant.thumb, `is`("https://b.zmtcdn.com/data/reviews_photos/a02/ec58c0b4cf2bb30629b0239498a7ea02_1529091046.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"))
     }
 
     private fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {

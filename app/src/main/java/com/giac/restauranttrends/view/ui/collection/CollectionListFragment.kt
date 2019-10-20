@@ -55,6 +55,7 @@ class CollectionListFragment : Fragment() {
         if (collectionListResource != null) {
             when (collectionListResource.status) {
                 Status.ERROR -> {
+                    // TODO agregar retry
                     binding.progressbar.visibility = View.GONE
                     binding.errorMessage.visibility = View.VISIBLE
                     binding.errorMessage.text = collectionListResource.message

@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="collection"
-            type="com.giac.restauranttrends.model.entity.Collection" />
+            name="restaurant"
+            type="com.giac.restauranttrends.model.entity.Restaurant" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -26,7 +26,7 @@
                 android:layout_height="@dimen/list_item_medium_dimension"
                 tools:src="@drawable/collection_test_image"
                 android:scaleType="centerCrop"
-                app:imageUrl="@{collection.imageUrl}"/>
+                app:imageUrl="@{restaurant.thumb}"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,27 +34,51 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/title"
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{collection.title}"
-                    tools:text="De Moda Esta Semana"
+                    tools:text="Trattoria Valdaosta"
                     style="@style/titleLarge"
-                    android:layout_margin="8dp"/>
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{restaurant.name}"/>
 
                 <TextView
-                    android:id="@+id/description"
+                    android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{collection.description}"
-                    tools:text="Los restaurantes mas populares en la ciudad en..."
+                    tools:text="PROVIDENCIA, SANTIAGO"
                     style="@style/textMedium"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp"
+                    android:text="@{restaurant.location.localityVerbose}"/>
+
+                <TextView
+                    android:id="@+id/cuisines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Italiana"
+                    style="@style/textMedium"
+                    android:layout_margin="8dp"
+                    android:text="@{restaurant.cuisines}"/>
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3.7"
+            tools:textColor="@color/white"
+            style="@style/titleLarge"
+            android:layout_margin="8dp"
+            android:text="@{String.valueOf(restaurant.userRating.rating)}"
+            android:layout_gravity="end"
+            android:background="@drawable/rating_background"/>
+
     </androidx.cardview.widget.CardView>
 </layout>
 
