@@ -18,10 +18,11 @@ class NavigationController(private val mainActivity : MainActivity) {
         replaceFragment(fragment)
     }
 
-    // TODO agregar backstack + animation transition
     private fun replaceFragment(newFragment : Fragment) {
         mainActivity.supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right)
             .replace(R.id.container, newFragment)
+            .addToBackStack(newFragment.javaClass.name)
             .commitAllowingStateLoss()
     }
 }
