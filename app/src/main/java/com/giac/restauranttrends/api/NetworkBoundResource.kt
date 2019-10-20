@@ -10,6 +10,7 @@ import com.giac.restauranttrends.api.response.ApiResponse
 import com.giac.restauranttrends.api.response.ApiSuccessResponse
 import com.giac.restauranttrends.vo.Resource
 
+// TODO verificar conexion a internet y poner mensaje
 abstract class NetworkBoundResource<ResultType, RequestType> @MainThread constructor() {
 
     private val result = MediatorLiveData<Resource<ResultType>>()
@@ -23,6 +24,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> @MainThread constru
                     result.value = Resource.success(processResponse(it.body))
                 }
                 is ApiErrorResponse -> {
+                    // TODO agregar mensaje amigable
                     result.value = Resource.error(it.errorMessage)
                 }
             }

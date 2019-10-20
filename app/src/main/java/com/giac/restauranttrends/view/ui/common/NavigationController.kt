@@ -3,7 +3,7 @@ package com.giac.restauranttrends.view.ui.common
 import androidx.fragment.app.Fragment
 import com.giac.restauranttrends.R
 import com.giac.restauranttrends.view.ui.MainActivity
-import com.giac.restauranttrends.view.ui.fragment.CollectionListFragment
+import com.giac.restauranttrends.view.ui.collection.CollectionListFragment
 
 class NavigationController(private val mainActivity : MainActivity) {
 

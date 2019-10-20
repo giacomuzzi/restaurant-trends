@@ -33,3 +33,4 @@ ext.retrofitVersion = '2.3.0'
 ext.okhttpVersion = '3.4.1'
 ext.mockWebServerVersion = "3.8.1"
 ext.androidUiVersion = '1.0.0'
+ext.glideVersion = "3.7.0"

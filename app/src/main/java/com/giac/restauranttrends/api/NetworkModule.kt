@@ -4,13 +4,11 @@ package com.giac.restauranttrends.api
 import com.giac.restauranttrends.BuildConfig
 import com.giac.restauranttrends.util.AppConstants
 import com.giac.restauranttrends.util.LiveDataCallAdapterFactory
-
-import java.util.concurrent.TimeUnit
-
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 /**
  * This class is responsible for setting up Retrofit and anything related to network calls.
@@ -38,6 +36,7 @@ object NetworkModule {
     fun okHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(AuthInterceptor())
+            .addInterceptor(LanguajeInterceptor())
             .addInterceptor(httpLoggingInterceptor)
             .connectTimeout(AppConstants.CONNECT_TIMEOUT.toLong(), TimeUnit.SECONDS)
             .writeTimeout(AppConstants.WRITE_TIMEOUT.toLong(), TimeUnit.SECONDS)
