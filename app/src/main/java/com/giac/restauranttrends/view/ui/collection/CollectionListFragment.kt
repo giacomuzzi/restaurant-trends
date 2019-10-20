@@ -22,10 +22,14 @@ import com.giac.restauranttrends.vo.Status
 class CollectionListFragment : Fragment() {
 
     private lateinit var binding : CollectionListFragmentBinding
-
     private lateinit var collectionListViewModel : CollectionListViewModel
-
     private lateinit var collectionListAdapter: CollectionListAdapter
+
+    private lateinit var collectionItemCallback: CollectionItemCallback
+
+    fun setCollectionItemCallback(collectionItemCallback: CollectionItemCallback) {
+        this.collectionItemCallback = collectionItemCallback
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +43,12 @@ class CollectionListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        collectionListAdapter = CollectionListAdapter()
+        collectionListAdapter = CollectionListAdapter(object : CollectionItemCallback {
+                override fun onClick(collection: Collection) {
+                    collectionItemCallback.onClick(collection)
+                }
+            }
+        )
         binding.collectionList.layoutManager = LinearLayoutManager(context)
         binding.collectionList.adapter = collectionListAdapter
 

@@ -72,10 +72,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="3.7"
-            tools:textColor="@color/white"
+            android:textColor="@color/white"
             style="@style/titleLarge"
             android:layout_margin="8dp"
-            android:text="@{String.valueOf(restaurant.userRating.rating)}"
+            app:userRating="@{restaurant.userRating}"
             android:layout_gravity="end"
             android:background="@drawable/rating_background"/>
 

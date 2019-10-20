@@ -5,7 +5,9 @@
     <string name="error_loading">Ups, no pudimos hacer esto, prueba de nuevo mas tarde!</string>
 
     <!-- Collection List -->
-    <string name="collection_list_title">Tendencias</string>
+    <string name="collection_list_title">Colecciones</string>
     <string name="empty_collection_list_result">No encontramos Colecciones en tu ciudad</string>
 
+    <!-- Restaurant List -->
+    <string name="restaurant_list_title">Restaurantes</string>
 </resources>
