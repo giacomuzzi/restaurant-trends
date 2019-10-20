@@ -8,9 +8,13 @@ import com.giac.restauranttrends.vo.Resource
 
 class RestaurantListViewModel : ViewModel() {
 
+    private lateinit var restaurantsLiveData : LiveData<Resource<List<Restaurant>>>
+
     fun getRestaurantOrderByRating(cityId : String, collectionId : String) : LiveData<Resource<List<Restaurant>>> {
-        // TODO guardar LiveData para no generar instancias de gusto, mantener dentro del estado del vm
-        return ZomatoRepository.getRestaurantOrderByRating(cityId, collectionId)
+        if (!::restaurantsLiveData.isInitialized) {
+            restaurantsLiveData = ZomatoRepository.getRestaurantOrderByRating(cityId, collectionId)
+        }
+        return restaurantsLiveData
     }
 
 }
