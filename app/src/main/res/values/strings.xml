@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">restaurant-trends</string>
+
+    <!-- Error Message -->
+    <string name="error_loading">Ups, no pudimos hacer esto, prueba de nuevo mas tarde!</string>
+
 </resources>

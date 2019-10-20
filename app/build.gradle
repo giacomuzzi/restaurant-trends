@@ -20,6 +20,9 @@ android {
             minifyEnabled false
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 // TODO hardcode versions
@@ -30,6 +33,8 @@ dependencies {
 
     // View
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.cardview:cardview:$androidUiVersion"
+    implementation "androidx.recyclerview:recyclerview:$androidUiVersion"
 
     // Testing
     testImplementation 'junit:junit:4.12'
