@@ -5,21 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.giac.restauranttrends.R
 import com.giac.restauranttrends.databinding.CollectionListFragmentBinding
 import com.giac.restauranttrends.model.entity.Collection
+import com.giac.restauranttrends.view.ui.AbstractBaseFragment
+import com.giac.restauranttrends.view.ui.common.DefaultResponseHandler
 import com.giac.restauranttrends.viewmodel.CollectionListViewModel
 import com.giac.restauranttrends.vo.Resource
-import com.giac.restauranttrends.vo.Status
 
 // TODO probar reconstruccion
 // TODO probar sin conexion
 // TODO probar kill process
-class CollectionListFragment : Fragment() {
+class CollectionListFragment : AbstractBaseFragment() {
 
     private lateinit var binding : CollectionListFragmentBinding
     private lateinit var collectionListViewModel : CollectionListViewModel
@@ -31,7 +30,7 @@ class CollectionListFragment : Fragment() {
         this.collectionItemCallback = collectionItemCallback
     }
 
-    override fun onCreateView(
+    override fun createContentFragmentLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,36 +53,22 @@ class CollectionListFragment : Fragment() {
 
         collectionListViewModel = ViewModelProviders.of(this).get(CollectionListViewModel::class.java)
         // TODO hardcode
-        collectionListViewModel.getCollections("83").observe(this, Observer { listResource ->
-            handleResponse(listResource)
-        })
+        collectionListViewModel.getCollections("83").observe(this, CollectionListResponseHandler())
 
     }
 
-    private fun handleResponse(collectionListResource: Resource<List<Collection>>?) {
-        if (collectionListResource != null) {
-            when (collectionListResource.status) {
-                Status.ERROR -> {
-                    // TODO agregar retry
-                    binding.progressbar.visibility = View.GONE
-                    binding.errorMessage.visibility = View.VISIBLE
-                    binding.errorMessage.text = collectionListResource.message
-                }
-                Status.LOADING -> {
-                    binding.progressbar.visibility = View.VISIBLE
-                    binding.errorMessage.visibility = View.GONE
-                }
-                Status.SUCCESS -> {
-                    binding.progressbar.visibility = View.GONE
-                    binding.errorMessage.visibility = View.GONE
-                    if (collectionListResource.data?.isNotEmpty() == true) {
-                        collectionListAdapter.setData(collectionListResource.data)
-                        collectionListAdapter.notifyDataSetChanged()
-                    } else {
-                        binding.errorMessage.text = resources.getString(R.string.empty_collection_list_result)
-                        binding.errorMessage.visibility = View.VISIBLE
-                    }
-                }
+    private inner class CollectionListResponseHandler : DefaultResponseHandler<Resource<List<Collection>>?>() {
+
+        override fun getFragment(): AbstractBaseFragment = this@CollectionListFragment
+
+        override fun onSuccess(resource: Resource<List<Collection>>?) {
+            super.onSuccess(resource)
+            if (resource?.data?.isNotEmpty() == true) {
+                collectionListAdapter.setData(resource.data)
+                collectionListAdapter.notifyDataSetChanged()
+            } else {
+                errorMessage.text = resources.getString(R.string.empty_collection_list_result)
+                errorMessage.visibility = View.VISIBLE
             }
         }
     }

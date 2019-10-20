@@ -5,24 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.giac.restauranttrends.R
 import com.giac.restauranttrends.databinding.RestaurantListFragmentBinding
 import com.giac.restauranttrends.model.entity.Restaurant
+import com.giac.restauranttrends.view.ui.AbstractBaseFragment
+import com.giac.restauranttrends.view.ui.common.DefaultResponseHandler
 import com.giac.restauranttrends.viewmodel.RestaurantListViewModel
 import com.giac.restauranttrends.vo.Resource
-import com.giac.restauranttrends.vo.Status
 
-class RestaurantListFragment : Fragment() {
+class RestaurantListFragment : AbstractBaseFragment() {
 
     private lateinit var binding : RestaurantListFragmentBinding
     private lateinit var restaurantListViewModel : RestaurantListViewModel
     private lateinit var restaurantListAdapter: RestaurantListAdapter
 
-    override fun onCreateView(
+    override fun createContentFragmentLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,36 +44,21 @@ class RestaurantListFragment : Fragment() {
 
         restaurantListViewModel = ViewModelProviders.of(this).get(RestaurantListViewModel::class.java)
         // TODO hardcode
-        restaurantListViewModel.getRestaurantOrderByRating("83", "1").observe(this, Observer { listResource ->
-            handleResponse(listResource)
-        })
+        restaurantListViewModel.getRestaurantOrderByRating("83", "1").observe(this, RestaurantListResponseHandler())
     }
 
-    // TODO mover codigo repetido a clase base
-    private fun handleResponse(restaurantListResource: Resource<List<Restaurant>>?) {
-        if (restaurantListResource != null) {
-            when (restaurantListResource.status) {
-                Status.ERROR -> {
-                    // TODO agregar retry
-                    binding.progressbar.visibility = View.GONE
-                    binding.errorMessage.visibility = View.VISIBLE
-                    binding.errorMessage.text = restaurantListResource.message
-                }
-                Status.LOADING -> {
-                    binding.progressbar.visibility = View.VISIBLE
-                    binding.errorMessage.visibility = View.GONE
-                }
-                Status.SUCCESS -> {
-                    binding.progressbar.visibility = View.GONE
-                    binding.errorMessage.visibility = View.GONE
-                    if (restaurantListResource.data?.isNotEmpty() == true) {
-                        restaurantListAdapter.setData(restaurantListResource.data)
-                        restaurantListAdapter.notifyDataSetChanged()
-                    } else {
-                        binding.errorMessage.text = resources.getString(R.string.empty_collection_list_result)
-                        binding.errorMessage.visibility = View.VISIBLE
-                    }
-                }
+    private inner class RestaurantListResponseHandler : DefaultResponseHandler<Resource<List<Restaurant>>?>() {
+
+        override fun getFragment(): AbstractBaseFragment = this@RestaurantListFragment
+
+        override fun onSuccess(resource: Resource<List<Restaurant>>?) {
+            super.onSuccess(resource)
+            if (resource?.data?.isNotEmpty() == true) {
+                restaurantListAdapter.setData(resource.data)
+                restaurantListAdapter.notifyDataSetChanged()
+            } else {
+                errorMessage.text = resources.getString(R.string.empty_collection_list_result)
+                errorMessage.visibility = View.VISIBLE
             }
         }
     }
