@@ -1,0 +1,272 @@
+{
+  "collections": [
+    {
+      "collection": {
+        "collection_id": 1,
+        "res_count": 30,
+        "image_url": "https://b.zmtcdn.com/data/collections/b53772a204429cb9b42313d6dc22bf3c_1556018415.jpg",
+        "url": "https://www.zomato.com/portoalegre/top-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Trending This Week",
+        "description": "Most popular restaurants in town this week",
+        "share_url": "http://www.zoma.to/c-83/1"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 344,
+        "res_count": 12,
+        "image_url": "https://b.zmtcdn.com/data/collections/273612e3880fa4790562ee39cf48be8b_1445579359_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/delivery-only-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Just Delivery",
+        "description": "Get your grub right at your doorstep",
+        "share_url": "http://www.zoma.to/c-83/344"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 321,
+        "res_count": 22,
+        "image_url": "https://b.zmtcdn.com/data/collections/f672e9556e44fe33ff47bf751639c0bd_1535356450.jpg",
+        "url": "https://www.zomato.com/portoalegre/pizza-time?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Pizza Time!",
+        "description": "The best pizza places in town",
+        "share_url": "http://www.zoma.to/c-83/321"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 34206,
+        "res_count": 13,
+        "image_url": "https://b.zmtcdn.com/data/collections/692424c468e50ea6344f077ae52b83d0_1452086687.jpg",
+        "url": "https://www.zomato.com/portoalegre/barrio-yungay?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Barrio Yungay Restaurants",
+        "description": "Coolest places in Barrio Yungay",
+        "share_url": "http://www.zoma.to/c-83/34206"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 287,
+        "res_count": 11,
+        "image_url": "https://b.zmtcdn.com/data/collections/6e914c9cb7b2697bed1b856e87b31447_1464723798.jpg",
+        "url": "https://www.zomato.com/portoalegre/family-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Family friendly",
+        "description": "The best places to enjoy a nice family dinner",
+        "share_url": "http://www.zoma.to/c-83/287"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 17609,
+        "res_count": 15,
+        "image_url": "https://b.zmtcdn.com/data/collections/1fa3acc57ad83023e1f50170b1b7fc08_1450444030.jpg",
+        "url": "https://www.zomato.com/portoalegre/dark-side?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Restaurants of the dark side",
+        "description": "Because hunger can strike at the strangest of times",
+        "share_url": "http://www.zoma.to/c-83/17609"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 20,
+        "res_count": 17,
+        "image_url": "https://b.zmtcdn.com/data/collections/532af3ab24d29dbddcdcd16921ada06f_1535628640.jpg",
+        "url": "https://www.zomato.com/portoalegre/great-breakfasts?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Great Breakfasts",
+        "description": "Brekkie or brunch, regardless what tickles your fancy, immerse yourself in our city’s cafe culture at these top spots",
+        "share_url": "http://www.zoma.to/c-83/20"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 22,
+        "res_count": 13,
+        "image_url": "https://b.zmtcdn.com/data/collections/b1eb0d5826a9286150fa3438095fcd93_1538393788.jpg",
+        "url": "https://www.zomato.com/portoalegre/best-coffee?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Great Coffee",
+        "description": "Caffeinate away with that perfect cup of cappuccino, mocha or latte from some of the best coffee spots",
+        "share_url": "http://www.zoma.to/c-83/22"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 40,
+        "res_count": 11,
+        "image_url": "https://b.zmtcdn.com/data/collections/aaa0ee598b2f745d9c184d9bf92412d3_1535696201.jpg",
+        "url": "https://www.zomato.com/portoalegre/dessert-places?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Sweet Tooth",
+        "description": "From cookies and doughnuts to ice cream and cakes, knock yourself out with these classic and creative desserts ",
+        "share_url": "http://www.zoma.to/c-83/40"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 75,
+        "res_count": 19,
+        "image_url": "https://b.zmtcdn.com/data/collections/f9d822284b336c1eb8c3af8c42216389_1460023238.jpg",
+        "url": "https://www.zomato.com/portoalegre/best-bars-and-pubs?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Best Bars and Pubs",
+        "description": "Find the best bars & pubs in your city",
+        "share_url": "http://www.zoma.to/c-83/75"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 285,
+        "res_count": 9,
+        "image_url": "https://b.zmtcdn.com/data/collections/dd0048f5ef6019eb457ecde8a9c86c2d_1442319341_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/vegan-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Vegan's Choice",
+        "description": "Go all out & treat yourself with the best of vegan food in town",
+        "share_url": "http://www.zoma.to/c-83/285"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 58,
+        "res_count": 15,
+        "image_url": "https://b.zmtcdn.com/data/collections/3fa6a1d163fa81af3b4fb3e33a7bb540_1535355867.jpg",
+        "url": "https://www.zomato.com/portoalegre/asian-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Pan-Asian Delicacies",
+        "description": "The best places for Asian fare",
+        "share_url": "http://www.zoma.to/c-83/58"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 16,
+        "res_count": 13,
+        "image_url": "https://b.zmtcdn.com/data/collections/f35008b07387dad450d428e60bf96196_1438667290_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/celebrity-chef-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Celebrity Chefs",
+        "description": "Savor the creations of the masters",
+        "share_url": "http://www.zoma.to/c-83/16"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 24,
+        "res_count": 16,
+        "image_url": "https://b.zmtcdn.com/data/collections/fb1a0edf9843e7a9145d44d0edaf553a_1421673616_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/unusual-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Unique Dining",
+        "description": "Dining experiences you'll remember forever",
+        "share_url": "http://www.zoma.to/c-83/24"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 41,
+        "res_count": 16,
+        "image_url": "https://b.zmtcdn.com/data/collections/d0a0e32df636a9dfbf850f13a38aa834_1446629668_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/craft-beer?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Craft Beer",
+        "description": "The best house brews in town",
+        "share_url": "http://www.zoma.to/c-83/41"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 45,
+        "res_count": 13,
+        "image_url": "https://b.zmtcdn.com/data/collections/84dc27311ac4e82075d3c1ce0a9da27b_1442320692_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/gluten-free-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Gluten-free",
+        "description": "Places serving the best gluten-free food.",
+        "share_url": "http://www.zoma.to/c-83/45"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 25,
+        "res_count": 17,
+        "image_url": "https://b.zmtcdn.com/data/collections/69e5a43935b4e69ecb56a40cddae57db_1453706053.jpg",
+        "url": "https://www.zomato.com/portoalegre/pet-friendly-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Pet friendly",
+        "description": "A pet lover? Chill out with your furry best friend at these spots ",
+        "share_url": "http://www.zoma.to/c-83/25"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 565,
+        "res_count": 13,
+        "image_url": "https://b.zmtcdn.com/data/collections/a0de18bf443406dd4c5b842d2199f764_1438063659_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/arabic-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Taste of Arabia",
+        "description": "The pride of the middle east!",
+        "share_url": "http://www.zoma.to/c-83/565"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 162,
+        "res_count": 22,
+        "image_url": "https://b.zmtcdn.com/data/collections/gourmet-sandwiches-L.jpg",
+        "url": "https://www.zomato.com/portoalegre/gourmet-sandwiches?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Gourmet Sandwiches",
+        "description": "Something different from your typical barros luco",
+        "share_url": "http://www.zoma.to/c-83/162"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 120,
+        "res_count": 15,
+        "image_url": "https://b.zmtcdn.com/data/collections/afaf975556af6ec76d04b3b25eeccdde_1418393221_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/global-cuisine?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Global Cuisine",
+        "description": "Restaurants where you can taste the world!",
+        "share_url": "http://www.zoma.to/c-83/120"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 792,
+        "res_count": 18,
+        "image_url": "https://b.zmtcdn.com/data/collections/f7bd8481bd34d8d39e9f5de2ed4c5a53_1446091956_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/peruvian-restaurants?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Flavors of Perú",
+        "description": "Dine at the finest Peruvian restaurants in the city",
+        "share_url": "http://www.zoma.to/c-83/792"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 524,
+        "res_count": 16,
+        "image_url": "https://b.zmtcdn.com/data/collections/88c5c1dbb0f2d2de292d094a772a1cac_1429539153_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/sugar-free-desserts?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Desserts for diabetics",
+        "description": "No sugar doesn't have to mean no flavour",
+        "share_url": "http://www.zoma.to/c-83/524"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 312,
+        "res_count": 16,
+        "image_url": "https://b.zmtcdn.com/data/collections/44b0bcd7535844a551b61d63121d6040_1433152069_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/best-grills?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Great grills",
+        "description": "Ribs, brisket, steak - find all you want at these meat havens",
+        "share_url": "http://www.zoma.to/c-83/312"
+      }
+    },
+    {
+      "collection": {
+        "collection_id": 769,
+        "res_count": 12,
+        "image_url": "https://b.zmtcdn.com/data/collections/4a7db28639eca8fd53d41d56193401b1_1444830711_l.jpg",
+        "url": "https://www.zomato.com/portoalegre/bread-day?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "title": "Bread Day",
+        "description": "For the best bread in the city, step right this way",
+        "share_url": "http://www.zoma.to/c-83/769"
+      }
+    }
+  ],
+  "has_more": 0,
+  "share_url": "http://www.zoma.to/c-83",
+  "display_text": "OR EXPLORE OUR COLLECTIONS",
+  "has_total": 0
+}
