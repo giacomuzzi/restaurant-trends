@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.giac.restauranttrends.R
 import com.giac.restauranttrends.databinding.RestaurantListFragmentBinding
 import com.giac.restauranttrends.model.entity.Restaurant
+import com.giac.restauranttrends.util.requireData
 import com.giac.restauranttrends.view.ui.AbstractBaseFragment
 import com.giac.restauranttrends.view.ui.common.DefaultResponseHandler
 import com.giac.restauranttrends.viewmodel.RestaurantListViewModel
@@ -58,14 +59,7 @@ class RestaurantListFragment : AbstractBaseFragment() {
         override fun getFragment(): AbstractBaseFragment = this@RestaurantListFragment
 
         override fun onSuccess(resource: Resource<List<Restaurant>>?) {
-            super.onSuccess(resource)
-            if (resource?.data?.isNotEmpty() == true) {
-                restaurantListAdapter.setData(resource.data)
-                restaurantListAdapter.notifyDataSetChanged()
-            } else {
-                errorMessage.text = resources.getString(R.string.empty_collection_list_result)
-                errorMessage.visibility = View.VISIBLE
-            }
+            restaurantListAdapter.setData(resource!!.requireData())
         }
     }
 

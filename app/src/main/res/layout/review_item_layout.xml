@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="review"
+            type="com.giac.restauranttrends.model.entity.Review" />
     </data>
 
     <LinearLayout
@@ -25,7 +27,8 @@
                 android:layout_height="@dimen/profile_image"
                 tools:src="@drawable/collection_test_image"
                 android:scaleType="centerCrop"
-                android:background="@color/black1"/>
+                android:background="@color/black1"
+                app:imageUrl="@{review.user.profileImage}"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,7 +43,8 @@
                     style="@style/titleSmall"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_marginBottom="4dp"
+                    android:text="@{review.user.name}"/>
 
                 <!-- TODO: refactor custom view  -->
                 <TextView
@@ -52,7 +56,8 @@
                     style="@style/titleLarge"
                     android:layout_marginStart="8dp"
                     android:textSize="10dp"
-                    android:background="@drawable/rating_background"/>
+                    android:background="@drawable/rating_background"
+                    app:userRating="@{review}"/>
 
                 <TextView
                     android:id="@+id/review_date"
@@ -60,7 +65,8 @@
                     android:layout_height="wrap_content"
                     tools:text="jul 04, 2018"
                     android:layout_marginStart="8dp"
-                    style="@style/textSmall" />
+                    style="@style/textSmall"
+                    android:text="@{review.timeFriendly}"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -70,7 +76,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Pasta casera, como si estuvieras en Italia.  Es un local casi escondido, familiar y casero, un pedacito de Italia que pasa inadvertido. Sus pastas son caseras y frescas, hechas por sus dueños que son un matrimonio italiano muy amable, esto hace que su sabor sea ese característico de la comida casera, pero la comida casera hecha con cariño. Para mi son de los mejores lugares en Santiago para comer pasta como debe ser, sabroso, abundante y fresco.  Y para terminar, un limoncello de cortesía. Maravilloso."
-            style="@style/textMedium" />
+            style="@style/textMedium"
+            android:text="@{review.text}"/>
 
     </LinearLayout>
 

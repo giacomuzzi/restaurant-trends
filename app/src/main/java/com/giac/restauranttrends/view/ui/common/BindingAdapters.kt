@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.giac.restauranttrends.model.entity.Review
 import com.giac.restauranttrends.model.entity.UserRating
 
 
@@ -25,10 +26,22 @@ object BindingAdapters {
     @BindingAdapter("bind:userRating")
     @JvmStatic
     fun setRating(text : TextView, userRating : UserRating) {
-        text.text =  userRating.rating.toString()
+        setRating(text, userRating.rating.toString(), userRating.color)
+
+    }
+
+    @BindingAdapter("bind:userRating")
+    @JvmStatic
+    fun setRating(text : TextView, review : Review) {
+        setRating(text, review.rating.toString(), review.ratingColor)
+    }
+
+    // TODO move to ColorUtils
+    private fun setRating(text : TextView, rating : String, ratingColor : String) {
+        text.text = rating.toString()
 
         // TODO move to ColorUtils
-        val color = Color.parseColor("#" + userRating.color)
+        val color = Color.parseColor("#$ratingColor")
         text.background.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
     }
 }

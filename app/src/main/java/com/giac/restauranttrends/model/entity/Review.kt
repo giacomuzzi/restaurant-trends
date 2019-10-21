@@ -7,6 +7,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Review (
     val rating : Float,
+    @SerializedName("rating_color")
+    val ratingColor : String,
     @SerializedName("review_text")
     val text : String,
     @SerializedName("review_time_friendly")

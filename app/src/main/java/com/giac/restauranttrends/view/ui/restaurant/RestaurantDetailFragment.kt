@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.giac.restauranttrends.R
 import com.giac.restauranttrends.databinding.RestaurantDetailBinding
 import com.giac.restauranttrends.model.entity.Restaurant
@@ -29,6 +30,13 @@ class RestaurantDetailFragment : AbstractBaseFragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.restaurant_detail, container, false)
         binding.restaurant = restaurant
         return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        binding.reviewList.layoutManager = LinearLayoutManager(context)
+        binding.reviewList.adapter = ReviewListAdapter(restaurant.reviewList)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

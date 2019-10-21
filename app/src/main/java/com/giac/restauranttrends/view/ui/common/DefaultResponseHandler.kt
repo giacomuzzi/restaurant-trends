@@ -6,6 +6,8 @@ import com.giac.restauranttrends.view.ui.AbstractBaseFragment
 import com.giac.restauranttrends.vo.Resource
 import com.giac.restauranttrends.vo.Status
 
+
+
 abstract class DefaultResponseHandler<T : Resource<*>?> : Observer<T> {
 
     abstract fun getFragment() : AbstractBaseFragment
@@ -20,7 +22,14 @@ abstract class DefaultResponseHandler<T : Resource<*>?> : Observer<T> {
                     onLoading()
                 }
                 Status.SUCCESS -> {
-                    onSuccess(resource)
+                    getFragment().progressbar.visibility = View.GONE
+                    getFragment().errorMessage.visibility = View.GONE
+                    if (resource.data == null || isEmptyList(resource)) {
+                        getFragment().errorMessage.text = getFragment().resources.getString(com.giac.restauranttrends.R.string.empty_collection_list_result)
+                        getFragment().errorMessage.visibility = View.VISIBLE
+                    } else {
+                        onSuccess(resource)
+                    }
                 }
             }
         }
@@ -38,8 +47,10 @@ abstract class DefaultResponseHandler<T : Resource<*>?> : Observer<T> {
         getFragment().errorMessage.text = resource!!.message
     }
 
-    open fun onSuccess(resource: T) {
-        getFragment().progressbar.visibility = View.GONE
-        getFragment().errorMessage.visibility = View.GONE
+    abstract fun onSuccess(resource: T)
+
+    private fun isEmptyList(resource: T) : Boolean {
+        val list = resource?.data as? List<*>
+        return list?.isEmpty() ?: false
     }
 }
