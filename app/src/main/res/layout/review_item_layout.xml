@@ -27,7 +27,7 @@
                 android:layout_height="@dimen/profile_image"
                 tools:src="@drawable/collection_test_image"
                 android:scaleType="centerCrop"
-                android:background="@color/black1"
+                android:background="@color/black2"
                 app:imageUrl="@{review.user.profileImage}"/>
 
             <LinearLayout

@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.giac.restauranttrends.R
-import com.giac.restauranttrends.databinding.RestaurantDetailBinding
 import com.giac.restauranttrends.model.entity.Restaurant
 import com.giac.restauranttrends.view.ui.AbstractBaseFragment
 
 class RestaurantDetailFragment : AbstractBaseFragment() {
 
-    private lateinit var binding : RestaurantDetailBinding
     private lateinit var restaurant : Restaurant
+
+    private lateinit var recyclerView : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,16 +27,16 @@ class RestaurantDetailFragment : AbstractBaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.restaurant_detail, container, false)
-        binding.restaurant = restaurant
-        return binding.root
+        val view = inflater.inflate(R.layout.restaurant_detail, container, false)
+        recyclerView = view.findViewById(R.id.content)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        binding.reviewList.layoutManager = LinearLayoutManager(context)
-        binding.reviewList.adapter = ReviewListAdapter(restaurant.reviewList)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = ReviewListAdapter(restaurant)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
