@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/featured_image"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/feature_img"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{collection.title}"
+        tools:text="Voy y Vuelvo"
+        style="@style/titleXLarge"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{collection.description}"
+            tools:text="Ñuñoa"
+            style="@style/textLarge"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_separator"
+            style="@style/titleLarge"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"/>
+
+        <TextView
+            android:id="@+id/cuisines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{collection.description}"
+            tools:text="Quick Bites"
+            style="@style/textLarge"
+            android:layout_marginEnd="8dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/timing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{collection.description}"
+        tools:text="1 PM to 7 PM (Mon-Sat), Closed (Sun)"
+        style="@style/textMedium"
+        android:layout_marginStart="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- TODO: refactor custom view  -->
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3.7"
+            android:textColor="@color/white"
+            style="@style/titleLarge"
+            android:layout_margin="8dp"
+            android:background="@drawable/rating_background"/>
+
+        <TextView
+            android:id="@+id/votes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{collection.description}"
+            tools:text="Based on 12 votes"
+            style="@style/textSmall"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_separator"
+            style="@style/titleLarge"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"/>
+
+        <TextView
+            android:id="@+id/average_coast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{collection.description}"
+            tools:text="$10000"
+            style="@style/textSmall"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black3"/>
+
+    <TextView
+        android:id="@+id/all_reviews_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{collection.description}"
+        tools:text="@string/all_reviews_title"
+        style="@style/titleMedium"
+        android:layout_marginStart="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/review_item_layout" />
+
+</LinearLayout>

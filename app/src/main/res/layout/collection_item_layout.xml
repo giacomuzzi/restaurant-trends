@@ -26,7 +26,8 @@
                 android:layout_height="@dimen/list_item_medium_dimension"
                 tools:src="@drawable/collection_test_image"
                 android:scaleType="centerCrop"
-                app:imageUrl="@{collection.imageUrl}"/>
+                app:imageUrl="@{collection.imageUrl}"
+                android:background="@color/black1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

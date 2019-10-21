@@ -26,7 +26,8 @@
                 android:layout_height="@dimen/list_item_medium_dimension"
                 tools:src="@drawable/collection_test_image"
                 android:scaleType="centerCrop"
-                app:imageUrl="@{restaurant.thumb}"/>
+                app:imageUrl="@{restaurant.thumb}"
+                android:background="@color/black1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,9 +41,11 @@
                     tools:text="Trattoria Valdaosta"
                     style="@style/titleLarge"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="50dp"
                     android:layout_marginTop="8dp"
-                    android:text="@{restaurant.name}"/>
+                    android:text="@{restaurant.name}"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
 
                 <TextView
                     android:id="@+id/location"
@@ -51,8 +54,10 @@
                     tools:text="PROVIDENCIA, SANTIAGO"
                     style="@style/textMedium"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{restaurant.location.localityVerbose}"/>
+                    android:layout_marginEnd="50dp"
+                    android:text="@{restaurant.location.localityVerbose}"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
 
                 <TextView
                     android:id="@+id/cuisines"

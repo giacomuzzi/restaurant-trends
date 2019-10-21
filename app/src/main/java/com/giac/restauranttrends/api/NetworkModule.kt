@@ -36,7 +36,6 @@ object NetworkModule {
     fun okHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(AuthInterceptor())
-            .addInterceptor(LanguajeInterceptor())
             .addInterceptor(httpLoggingInterceptor)
             .connectTimeout(AppConstants.CONNECT_TIMEOUT.toLong(), TimeUnit.SECONDS)
             .writeTimeout(AppConstants.WRITE_TIMEOUT.toLong(), TimeUnit.SECONDS)

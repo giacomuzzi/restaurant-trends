@@ -1,13 +1,16 @@
 <resources>
-    <string name="app_name">restaurant-trends</string>
+    <string name="app_name">ResTrends</string>
 
     <!-- Error Message -->
-    <string name="error_loading">Ups, no pudimos hacer esto, prueba de nuevo mas tarde!</string>
+    <string name="error_loading">Ooops, something went wrong. Let\'s try one more again</string>
 
     <!-- Collection List -->
-    <string name="collection_list_title">Colecciones</string>
-    <string name="empty_collection_list_result">No encontramos Colecciones en tu ciudad</string>
+    <string name="collection_list_title">Collections</string>
+    <string name="empty_collection_list_result">Collections not found :(</string>
 
     <!-- Restaurant List -->
-    <string name="restaurant_list_title">Restaurantes</string>
+    <string name="restaurant_list_title">Restaurants</string>
+    <string name="text_separator">·</string>
+    <string name="all_reviews_title">All Reviews</string>
+
 </resources>

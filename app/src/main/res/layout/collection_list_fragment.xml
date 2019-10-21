@@ -7,8 +7,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="?attr/actionBarSize"
         tools:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/collection_item_layout"
-        tools:spanCount="3" />
+        tools:listitem="@layout/collection_item_layout" />
 
 </layout>
 

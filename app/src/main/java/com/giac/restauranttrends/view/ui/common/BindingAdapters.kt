@@ -15,6 +15,7 @@ object BindingAdapters {
     @BindingAdapter("bind:imageUrl")
     @JvmStatic
     fun setImageUrl(view : ImageView, url : String?) {
+        // TODO add error image
         Glide.with(view.context)
             .load(url)
             .dontAnimate()

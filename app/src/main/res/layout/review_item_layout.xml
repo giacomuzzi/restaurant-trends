@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/profile_image"
+                android:layout_height="@dimen/profile_image"
+                tools:src="@drawable/collection_test_image"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{collection.imageUrl}"
+                android:background="@color/black1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{collection.title}"
+                    tools:text="Leo Messi"
+                    style="@style/titleSmall"
+                    android:layout_margin="8dp"/>
+
+                <!-- TODO: refactor custom view  -->
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="3.7"
+                    android:textColor="@color/white"
+                    style="@style/titleLarge"
+                    android:layout_marginStart="8dp"
+                    android:textSize="10dp"
+                    android:background="@drawable/rating_background"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/review_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Pasta casera, como si estuvieras en Italia.  Es un local casi escondido, familiar y casero, un pedacito de Italia que pasa inadvertido. Sus pastas son caseras y frescas, hechas por sus dueños que son un matrimonio italiano muy amable, esto hace que su sabor sea ese característico de la comida casera, pero la comida casera hecha con cariño. Para mi son de los mejores lugares en Santiago para comer pasta como debe ser, sabroso, abundante y fresco.  Y para terminar, un limoncello de cortesía. Maravilloso."
+            style="@style/textMedium" />
+
+    </LinearLayout>
+
+</layout>
+

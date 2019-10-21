@@ -9,6 +9,12 @@
     </style>
 
     <!--Title Styles-->
+    <style name="titleSmall">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@drawable/title_states_selector</item> <!--#444 68 fuerte-->
+    </style>
+
     <style name="titleMedium">
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textSize">14sp</item>
@@ -21,10 +27,28 @@
         <item name="android:textColor">@drawable/title_states_selector</item> <!--#444 68 fuerte-->
     </style>
 
+    <style name="titleXLarge">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@drawable/text_states_selector</item> <!--#444 68 fuerte-->
+    </style>
+
     <!--Text Styles-->
+    <style name="textSmall">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@drawable/text_states_selector</item> <!--#666 102 intermedio-->
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="textMedium">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textColor">@drawable/text_states_selector</item> <!--#666 102 intermedio-->
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="textLarge">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/text_states_selector</item> <!--#444 68 fuerte-->
     </style>
 </resources>
