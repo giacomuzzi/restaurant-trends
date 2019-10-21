@@ -51,10 +51,10 @@ class ZomatoServiceTest {
     fun getCities() {
         enqueueResponse("cities.json")
 
-        val apiSuccessResponse = getValue(service.getCities("-33.408204", "-70.543132")) as ApiSuccessResponse
+        val apiSuccessResponse = getValue(service.findCities("Santiago")) as ApiSuccessResponse
 
         val request = mockWebServer.takeRequest()
-        assertThat(request.path, `is`("/cities?lat=-33.408204&lon=-70.543132"))
+        assertThat(request.path, `is`("/cities?q=Santiago"))
 
         val cities = apiSuccessResponse.body.locationSuggestions
         assertThat(cities.size, `is`(1))
@@ -75,7 +75,7 @@ class ZomatoServiceTest {
         val request = mockWebServer.takeRequest()
         assertThat(request.path, `is`("/collections?city_id=83"))
 
-        val collections = apiSuccessResponse.body.collections.map { it.collection }
+        val collections = apiSuccessResponse.body.collections!!.map { it.collection }
         assertThat(collections.size, `is`(24))
 
         collections.forEach {
@@ -114,7 +114,7 @@ class ZomatoServiceTest {
 
         // coast
         assertThat(lastRestaurant.currency, `is`("$"))
-        assertThat(lastRestaurant.averageCoast, `is`(6000))
+        assertThat(lastRestaurant.averageCoastWithCurrency, `is`("$6000"))
 
         // user rating
         assertThat(lastRestaurant.userRating.rating, `is`(3.8F))

@@ -17,12 +17,11 @@ object ZomatoRepository {
 
     val zomatoService: ZomatoService = NetworkModule.getRetrofit().create(ZomatoService::class.java)
 
-    // TODO agregar soporte para guardar cities en cache ya que no tiene sentido hacer un request cada vez que se necesiten los datos
-    fun getCities(lat : String, lon : String): LiveData<Resource<List<City>>> {
+    fun findCities(query : String): LiveData<Resource<List<City>>> {
         return object : NetworkBoundResource<List<City>, CitiesResult>() {
 
             override fun createCall(): LiveData<ApiResponse<CitiesResult>> =
-                zomatoService.getCities(lat, lon)
+                zomatoService.findCities(query)
 
             override fun processResponse(result: CitiesResult): List<City> =
                 result.locationSuggestions
@@ -37,7 +36,7 @@ object ZomatoRepository {
                 zomatoService.getCollections(cityId)
 
             override fun processResponse(result: CollectionsResult): List<Collection> =
-                result.collections.map { it.collection }
+                result.collections?.map { it.collection } ?: emptyList()
 
         }.asLiveData()
     }

@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.giac.restauranttrends.R
 
 abstract class AbstractBaseFragment : Fragment() {
 
@@ -22,13 +22,19 @@ abstract class AbstractBaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.abstract_base_fragment, container, false)
-        progressbar = view.findViewById(R.id.progressbar)
-        errorMessage = view.findViewById(R.id.errorMessage)
-        toolbar = view.findViewById(R.id.toolbar)
-        val content = view.findViewById<ViewGroup>(R.id.container)
+        val view = inflater.inflate(com.giac.restauranttrends.R.layout.abstract_base_fragment, container, false)
+        progressbar = view.findViewById(com.giac.restauranttrends.R.id.progressbar)
+        errorMessage = view.findViewById(com.giac.restauranttrends.R.id.errorMessage)
+        toolbar = view.findViewById(com.giac.restauranttrends.R.id.toolbar)
+        val content = view.findViewById<ViewGroup>(com.giac.restauranttrends.R.id.container)
         content.addView(createContentFragmentLayout(inflater, container, savedInstanceState))
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        setHasOptionsMenu(true)
     }
 
     abstract fun createContentFragmentLayout(

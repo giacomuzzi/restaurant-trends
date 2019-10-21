@@ -17,6 +17,6 @@ class AuthInterceptor : Interceptor {
 
     companion object {
 
-        private val ZOMATO_API_KEY = "61b8c97a32fae60fe9a28ed0f7b45d94"
+        private const val ZOMATO_API_KEY = "61b8c97a32fae60fe9a28ed0f7b45d94"
     }
 }

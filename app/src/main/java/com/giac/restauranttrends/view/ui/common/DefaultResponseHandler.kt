@@ -27,6 +27,7 @@ abstract class DefaultResponseHandler<T : Resource<*>?> : Observer<T> {
                     if (resource.data == null || isEmptyList(resource)) {
                         getFragment().errorMessage.text = getFragment().resources.getString(com.giac.restauranttrends.R.string.empty_collection_list_result)
                         getFragment().errorMessage.visibility = View.VISIBLE
+                        onEmptyResult()
                     } else {
                         onSuccess(resource)
                     }
@@ -48,6 +49,10 @@ abstract class DefaultResponseHandler<T : Resource<*>?> : Observer<T> {
     }
 
     abstract fun onSuccess(resource: T)
+
+    open fun onEmptyResult(){
+        // Do nothing
+    }
 
     private fun isEmptyList(resource: T) : Boolean {
         val list = resource?.data as? List<*>

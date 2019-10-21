@@ -9,21 +9,20 @@ import com.giac.restauranttrends.vo.Resource
 
 class CollectionListViewModel : ViewModel() {
 
-    private lateinit var citiesLiveData : LiveData<Resource<List<City>>>
-    private lateinit var collectionLiveData : LiveData<Resource<List<Collection>>>
+    private lateinit var cityId : String
+    private lateinit var collectionsLiveData : LiveData<Resource<List<Collection>>>
 
-    fun getCities(lat : String, lon : String): LiveData<Resource<List<City>>> {
-        if (!::citiesLiveData.isInitialized) {
-            citiesLiveData = ZomatoRepository.getCities(lat, lon)
-        }
-        return citiesLiveData
+    // TODO optimizar si query es la actual
+    fun findCities(query: String) : LiveData<Resource<List<City>>> {
+        return ZomatoRepository.findCities(query)
     }
 
     fun getCollections(cityId : String): LiveData<Resource<List<Collection>>> {
-        if (!::collectionLiveData.isInitialized) {
-            collectionLiveData = ZomatoRepository.getCollections(cityId)
+        if (!this::cityId.isInitialized || cityId != this.cityId) {
+            this.cityId = cityId
+            collectionsLiveData = ZomatoRepository.getCollections(cityId)
         }
-        return collectionLiveData
+        return collectionsLiveData
     }
 
 }
