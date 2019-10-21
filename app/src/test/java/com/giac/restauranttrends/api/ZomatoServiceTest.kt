@@ -108,11 +108,34 @@ class ZomatoServiceTest {
         val lastRestaurant = restaurants.last()
         assertThat(lastRestaurant.id, `is`(8301532))
         assertThat(lastRestaurant.name, `is`("Al Jazeera"))
-        assertThat(lastRestaurant.location.localityVerbose, `is`("Galería Edificio Huérfanos 1373, Santiago Centro, Santiago"))
-        assertThat(lastRestaurant.userRating.rating, `is`(3.8F))
-        assertThat(lastRestaurant.userRating.color, `is`("9ACD32"))
         assertThat(lastRestaurant.cuisines, `is`("Arabian"))
         assertThat(lastRestaurant.thumb, `is`("https://b.zmtcdn.com/data/reviews_photos/a02/ec58c0b4cf2bb30629b0239498a7ea02_1529091046.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"))
+        assertThat(lastRestaurant.timings, `is`("11 AM to 8 PM (Mon-Fri),Closed (Sat-Sun)"))
+
+        // coast
+        assertThat(lastRestaurant.currency, `is`("$"))
+        assertThat(lastRestaurant.averageCoast, `is`(6000))
+
+        // user rating
+        assertThat(lastRestaurant.userRating.rating, `is`(3.8F))
+        assertThat(lastRestaurant.userRating.color, `is`("9ACD32"))
+
+        // location
+        assertThat(lastRestaurant.location.localityVerbose, `is`("Galería Edificio Huérfanos 1373, Santiago Centro, Santiago"))
+
+        // reviews
+        val firstReview = lastRestaurant.reviewList[0]
+        assertThat(lastRestaurant.reviewList.size, `is`(5))
+        assertThat(firstReview.rating, `is`(3F))
+        assertThat(firstReview.text, notNullValue())
+        assertThat(firstReview.timeFriendly, `is`("may 13, 2018"))
+
+        // user profile
+        val userProfile = firstReview.user
+        assertThat(userProfile, notNullValue())
+        assertThat(userProfile.name, `is`("Gabriel Rodriguez"))
+        assertThat(userProfile.profileImage, `is`("https://b.zmtcdn.com/data/user_profile_pictures/98e/a89b9ff7edd16021c11a14978fb6698e.jpg?fit=around%7C100%3A100&crop=100%3A100%3B%2A%2C%2A"))
+
     }
 
     private fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {

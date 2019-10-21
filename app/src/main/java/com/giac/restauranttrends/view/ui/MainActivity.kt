@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.giac.restauranttrends.R
 import com.giac.restauranttrends.model.entity.Collection
+import com.giac.restauranttrends.model.entity.Restaurant
 import com.giac.restauranttrends.view.ui.collection.CollectionItemCallback
 import com.giac.restauranttrends.view.ui.collection.CollectionListFragment
 import com.giac.restauranttrends.view.ui.common.NavigationController
+import com.giac.restauranttrends.view.ui.restaurant.RestaurantItemCallback
+import com.giac.restauranttrends.view.ui.restaurant.RestaurantListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         override fun onClick(collection: Collection) {
             navigationController.navigateToRestaurantListFragment()
+        }
+    }
+
+    private val restaurantItemCallback = object : RestaurantItemCallback {
+
+        override fun onClick(restaurant: Restaurant) {
+            navigationController.navigateToRestaurantDetailFragment(restaurant)
         }
     }
 
@@ -33,6 +43,9 @@ class MainActivity : AppCompatActivity() {
         super.onAttachFragment(fragment)
         if (fragment is CollectionListFragment) {
             fragment.setCollectionItemCallback(collectionItemCallback)
+        }
+        if (fragment is RestaurantListFragment) {
+            fragment.setRestaurantItemCallback(restaurantItemCallback)
         }
     }
 

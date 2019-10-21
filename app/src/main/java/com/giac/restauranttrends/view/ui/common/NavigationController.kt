@@ -2,8 +2,10 @@ package com.giac.restauranttrends.view.ui.common
 
 import androidx.fragment.app.Fragment
 import com.giac.restauranttrends.R
+import com.giac.restauranttrends.model.entity.Restaurant
 import com.giac.restauranttrends.view.ui.MainActivity
 import com.giac.restauranttrends.view.ui.collection.CollectionListFragment
+import com.giac.restauranttrends.view.ui.restaurant.RestaurantDetailFragment
 import com.giac.restauranttrends.view.ui.restaurant.RestaurantListFragment
 
 class NavigationController(private val mainActivity : MainActivity) {
@@ -15,6 +17,11 @@ class NavigationController(private val mainActivity : MainActivity) {
 
     fun navigateToRestaurantListFragment() {
         val fragment = RestaurantListFragment.newInstance()
+        replaceFragment(fragment)
+    }
+
+    fun navigateToRestaurantDetailFragment(restaurant: Restaurant) {
+        val fragment = RestaurantDetailFragment.newInstance(restaurant)
         replaceFragment(fragment)
     }
 

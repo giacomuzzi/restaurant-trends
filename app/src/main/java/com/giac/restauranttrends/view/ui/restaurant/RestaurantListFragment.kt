@@ -21,6 +21,8 @@ class RestaurantListFragment : AbstractBaseFragment() {
     private lateinit var restaurantListViewModel : RestaurantListViewModel
     private lateinit var restaurantListAdapter: RestaurantListAdapter
 
+    private lateinit var restaurantItemCallback: RestaurantItemCallback
+
     override fun createContentFragmentLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,16 +37,20 @@ class RestaurantListFragment : AbstractBaseFragment() {
 
         restaurantListAdapter = RestaurantListAdapter(object : RestaurantItemCallback {
             override fun onClick(restaurant: Restaurant) {
-                TODO("handle restaurant")
+                restaurantItemCallback.onClick(restaurant)
             }
-        }
-        )
+        })
         binding.restaurantList.layoutManager = LinearLayoutManager(context)
         binding.restaurantList.adapter = restaurantListAdapter
 
         restaurantListViewModel = ViewModelProviders.of(this).get(RestaurantListViewModel::class.java)
         // TODO hardcode
         restaurantListViewModel.getRestaurantOrderByRating("83", "1").observe(this, RestaurantListResponseHandler())
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setTitle(R.string.restaurant_list_title)
     }
 
     private inner class RestaurantListResponseHandler : DefaultResponseHandler<Resource<List<Restaurant>>?>() {
@@ -61,6 +67,10 @@ class RestaurantListFragment : AbstractBaseFragment() {
                 errorMessage.visibility = View.VISIBLE
             }
         }
+    }
+
+    fun setRestaurantItemCallback(restaurantItemCallback: RestaurantItemCallback) {
+        this.restaurantItemCallback = restaurantItemCallback
     }
 
     companion object {

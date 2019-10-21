@@ -16,7 +16,7 @@ class RestaurantListAdapter(private val callback : RestaurantItemCallback) : Rec
         val binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.restaurant_item_layout, parent, false) as RestaurantItemLayoutBinding
         binding.root.setOnClickListener {
             binding.restaurant?.let {
-                // TODO
+                callback.onClick(it)
             }
         }
         return RestaurantItemViewHolder(binding)

@@ -43,11 +43,10 @@ class CollectionListFragment : AbstractBaseFragment() {
         super.onActivityCreated(savedInstanceState)
 
         collectionListAdapter = CollectionListAdapter(object : CollectionItemCallback {
-                override fun onClick(collection: Collection) {
-                    collectionItemCallback.onClick(collection)
-                }
+            override fun onClick(collection: Collection) {
+                collectionItemCallback.onClick(collection)
             }
-        )
+        })
         binding.collectionList.layoutManager = LinearLayoutManager(context)
         binding.collectionList.adapter = collectionListAdapter
 
@@ -55,6 +54,11 @@ class CollectionListFragment : AbstractBaseFragment() {
         // TODO hardcode
         collectionListViewModel.getCollections("83").observe(this, CollectionListResponseHandler())
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setTitle(R.string.collection_list_title)
     }
 
     private inner class CollectionListResponseHandler : DefaultResponseHandler<Resource<List<Collection>>?>() {

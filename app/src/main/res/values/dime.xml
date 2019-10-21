@@ -5,7 +5,7 @@
     <dimen name="list_item_medium_dimension">120dp</dimen>
 
     <!--  Restaurant Detail -->
-    <dimen name="featured_image">150dp</dimen>
+    <dimen name="featured_image">200dp</dimen>
     <dimen name="profile_image">60dp</dimen>
 
 </resources>

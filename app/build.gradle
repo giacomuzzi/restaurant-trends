@@ -27,6 +27,11 @@ android {
     }
 }
 
+// Enable automatic Parcelable implementation generator
+androidExtensions {
+    experimental = true
+}
+
 // TODO hardcode versions
 dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

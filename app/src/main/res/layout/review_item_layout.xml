@@ -25,7 +25,6 @@
                 android:layout_height="@dimen/profile_image"
                 tools:src="@drawable/collection_test_image"
                 android:scaleType="centerCrop"
-                app:imageUrl="@{collection.imageUrl}"
                 android:background="@color/black1"/>
 
             <LinearLayout
@@ -37,10 +36,11 @@
                     android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{collection.title}"
                     tools:text="Leo Messi"
                     style="@style/titleSmall"
-                    android:layout_margin="8dp"/>
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="4dp"/>
 
                 <!-- TODO: refactor custom view  -->
                 <TextView
@@ -54,6 +54,13 @@
                     android:textSize="10dp"
                     android:background="@drawable/rating_background"/>
 
+                <TextView
+                    android:id="@+id/review_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="jul 04, 2018"
+                    android:layout_marginStart="8dp"
+                    style="@style/textSmall" />
             </LinearLayout>
 
         </LinearLayout>
