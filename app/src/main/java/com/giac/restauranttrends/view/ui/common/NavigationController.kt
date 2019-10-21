@@ -15,8 +15,8 @@ class NavigationController(private val mainActivity : MainActivity) {
         replaceFragment(fragment)
     }
 
-    fun navigateToRestaurantListFragment() {
-        val fragment = RestaurantListFragment.newInstance()
+    fun navigateToRestaurantListFragment(cityId : String, collectionId : String) {
+        val fragment = RestaurantListFragment.newInstance(cityId, collectionId)
         replaceFragment(fragment)
     }
 

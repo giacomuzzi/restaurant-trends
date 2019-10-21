@@ -9,6 +9,7 @@ import com.giac.restauranttrends.databinding.CollectionItemLayoutBinding
 import com.giac.restauranttrends.model.entity.Collection
 
 class CollectionListAdapter(
+    private val cityId : String,
     private val callback : CollectionItemCallback
 ) : RecyclerView.Adapter<CollectionListAdapter.CollectionItemViewHolder>() {
 
@@ -18,7 +19,7 @@ class CollectionListAdapter(
         val binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.collection_item_layout, parent, false) as CollectionItemLayoutBinding
         binding.root.setOnClickListener {
             binding.collection?.let {
-                callback.onClick(it)
+                callback.onClick(cityId, it)
             }
         }
         return CollectionItemViewHolder(binding)

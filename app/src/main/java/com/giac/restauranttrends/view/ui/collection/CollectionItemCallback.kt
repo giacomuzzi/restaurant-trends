@@ -3,5 +3,5 @@ package com.giac.restauranttrends.view.ui.collection
 import com.giac.restauranttrends.model.entity.Collection
 
 interface CollectionItemCallback {
-    fun onClick(collection: Collection)
+    fun onClick(cityId : String, collection: Collection)
 }

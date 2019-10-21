@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     private val collectionItemCallback = object : CollectionItemCallback {
 
-        override fun onClick(collection: Collection) {
-            navigationController.navigateToRestaurantListFragment()
+        override fun onClick(cityId : String, collection: Collection) {
+            navigationController.navigateToRestaurantListFragment(cityId, collection.id.toString())
         }
     }
 

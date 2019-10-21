@@ -24,6 +24,16 @@ class RestaurantListFragment : AbstractBaseFragment() {
 
     private lateinit var restaurantItemCallback: RestaurantItemCallback
 
+    private lateinit var cityId: String
+    private lateinit var collectionId: String
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        cityId = requireArguments().getString(CITY_ID_EXTRA)!!
+        collectionId = requireArguments().getString(COLLECTION_ID_EXTRA)!!
+    }
+
     override fun createContentFragmentLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,8 +55,7 @@ class RestaurantListFragment : AbstractBaseFragment() {
         binding.restaurantList.adapter = restaurantListAdapter
 
         restaurantListViewModel = ViewModelProviders.of(this).get(RestaurantListViewModel::class.java)
-        // TODO hardcode
-        restaurantListViewModel.getRestaurantOrderByRating("83", "1").observe(this, RestaurantListResponseHandler())
+        restaurantListViewModel.getRestaurantOrderByRating(cityId, collectionId).observe(this, RestaurantListResponseHandler())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -68,7 +77,18 @@ class RestaurantListFragment : AbstractBaseFragment() {
     }
 
     companion object {
-        fun newInstance() : RestaurantListFragment =
-            RestaurantListFragment()
+
+        private const val CITY_ID_EXTRA = "cityIdExtra"
+        private const val COLLECTION_ID_EXTRA = "collectionIdExtra"
+
+        fun newInstance(cityId : String, collectionId : String) : RestaurantListFragment {
+            val fragment = RestaurantListFragment()
+            val bundle = Bundle()
+            bundle.putString(CITY_ID_EXTRA, cityId)
+            bundle.putString(COLLECTION_ID_EXTRA, collectionId)
+            fragment.arguments = bundle
+            return fragment
+        }
+
     }
 }

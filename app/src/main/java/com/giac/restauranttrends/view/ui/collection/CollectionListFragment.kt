@@ -16,9 +16,7 @@ import com.giac.restauranttrends.view.ui.common.DefaultResponseHandler
 import com.giac.restauranttrends.viewmodel.CollectionListViewModel
 import com.giac.restauranttrends.vo.Resource
 
-// TODO probar reconstruccion
 // TODO probar sin conexion
-// TODO probar kill process
 class CollectionListFragment : AbstractBaseFragment() {
 
     private lateinit var binding : CollectionListFragmentBinding
@@ -43,17 +41,15 @@ class CollectionListFragment : AbstractBaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        collectionListAdapter = CollectionListAdapter(object : CollectionItemCallback {
-            override fun onClick(collection: Collection) {
-                collectionItemCallback.onClick(collection)
-            }
-        })
+        // TODO hardcode
+        val cityId = "83"
+
+        collectionListAdapter = CollectionListAdapter(cityId, collectionItemCallback)
         binding.collectionList.layoutManager = LinearLayoutManager(context)
         binding.collectionList.adapter = collectionListAdapter
 
         collectionListViewModel = ViewModelProviders.of(this).get(CollectionListViewModel::class.java)
-        // TODO hardcode
-        collectionListViewModel.getCollections("83").observe(this, CollectionListResponseHandler())
+        collectionListViewModel.getCollections(cityId).observe(this, CollectionListResponseHandler())
 
     }
 

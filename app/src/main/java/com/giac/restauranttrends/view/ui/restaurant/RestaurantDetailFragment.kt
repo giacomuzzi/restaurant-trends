@@ -12,6 +12,7 @@ import com.giac.restauranttrends.view.ui.AbstractBaseFragment
 
 class RestaurantDetailFragment : AbstractBaseFragment() {
 
+    // TODO falta descargar el resto de las reviews
     private lateinit var restaurant : Restaurant
 
     private lateinit var recyclerView : RecyclerView
